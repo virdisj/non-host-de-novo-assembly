@@ -46,15 +46,17 @@ def dir_names(homdir, *args):
     ndir_list = dir_list
     try:
         for i in ndir_list:
-            dc = Popen(["find", homdir, "-name", i],stdout=PIPE)
-            work_dir = str(dc.stdout.read()).rstrip()
+            dc = Popen(["find", homdir, "-name", i], stdout=PIPE)
+            work_dir = dc.stdout.read().rstrip()
+            work_dir = work_dir.decode('utf-8')
             tdir.append(work_dir)
             dc.kill()
         tdir = tdir + list(args)
+        #print(tdir)
         for i in tdir:
             if len(i) == 0:
-                print("Cannot find %s, Please enter the correct parent directory for the mentioned tools: %s, %s" % (
-                str(i), str(ndir_list[0]), str(ndir_list[1])))
+                print("Cannot find %s, Please enter the correct parent directory for the mentioned tools: %s" % (
+                str(i), str(ndir_list[0])))
                 sys.exit(-1)
         return tdir
 
