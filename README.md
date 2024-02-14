@@ -16,7 +16,7 @@ SPADES: https://github.com/ablab/spades
 
 **usage:**
 
-denono.py -h 
+denovo.py -h 
 
 **example:**
 
