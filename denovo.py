@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Pipeline for ATAC seq and ChIP seq
+"""Pipeline for non-host de novo assembly
 
 Usage:
  denovo.py align-pe <fqfile1> <fqfile2> REF [-t <x>] -o OUTPUT
